@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Escuela Secundaria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="boton.css">
+    <link rel="stylesheet" href="qr.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Biblioteca Virtual</h1>
+                <p>Bienvenidos a la Biblioteca Virtual de la Escuela Secundaria Técnica Número 6. Explora libros, artículos y recursos educativos.</p>
+            </div>
+            <div class="header-logo">
+                <img src="seculogc1.png" alt="Logo de la Escuela" />
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#categorias">Categorías</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar...">
+        <i class="fas fa-search" id="search-icon"></i>
+    </div>
+    
+
+    <section id="categorias">
+        <h2>Categorías</h2>
+        <div class="category-list">
+            <div class="category-item">
+                <h3>Matemáticas</h3>
+                <img src="Imagenes/matematicas.png" alt="Matemáticas">
+                <p>Descubre el fascinante mundo de los números, ecuaciones y geometría. ¡Aprende a resolver problemas con lógica y creatividad!</p>
+                <a href="matematicas.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Ciencias</h3>
+                <img src="Imagenes/ciencias.png" alt="Ciencias">
+                <p>Explora el universo, la vida y la materia. Libros de biología, química y física te esperan para despertar tu curiosidad.</p>
+                <a href="ciencias.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Literatura</h3>
+                <img src="Imagenes/literatura.png" alt="Literatura">
+                <p>Sumérgete en historias cautivadoras y conoce a los grandes autores. La literatura te llevará a mundos inexplorados.</p>
+                <a href="literatura.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Artes</h3>
+                <img src="Imagenes/artes.png" alt="Artes">
+                <p>Descubre la magia de la creatividad a través de la pintura, la música y la danza. Las artes te invitan a explorar nuevas emociones y perspectivas.</p>
+                <a href="artes.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Trabajo Social</h3>
+                <img src="Imagenes/trabajosocial.png" alt="TrabajoSocial">
+                <p>Transforma vidas y fortalece comunidades a través del trabajo social. Ayuda a crear un mundo más justo y solidario.</p>
+                <a href="trabajosocial.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Geografía</h3>
+                <img src="Imagenes/geografia.png" alt="Geografía">
+                <p>Explora la diversidad de nuestro planeta y entiende cómo los entornos naturales y humanos se interrelacionan. La geografía te invita a descubrir paisajes, culturas y la complejidad de la Tierra.</p>
+                <a href="geografia.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Historia</h3>
+                <img src="Imagenes/historia.png" alt="Historia">
+                <p>Viaja a través del tiempo y descubre las historias que han dado forma a nuestra civilización. La historia te permite entender las lecciones del pasado y su impacto en el presente y futuro.</p>
+                <a href="historia.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Diccionario</h3>
+                <img src="Imagenes/diccionario.png" alt="Diccionario">
+                <p>Amplía tu vocabulario y enriquece tu comunicación con el diccionario. Encuentra significados, sinónimos y ejemplos que te ayudarán a explorar el fascinante mundo del lenguaje.</p>
+                <a href="diccionario.html" class="boton">Ir</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="book-section">
+        <h2>Recomendación Escolar</h2>
+        <div class="book-list">
+            <div class="book-item">
+                <img src="Imagenes/diccionariodemexico.png" alt="Libro 1">
+                <h3>Diccionario de México</h3>
+                <p>Autor: &copy; Juan Palomar de Miguel</p>
+                <p>Género: Diccionario</p>
+            </div>
+            <div class="book-item">
+                <img src="Imagenes/diccionarioescolar.png" alt="Libro 2">
+                <h3>Diccionario Escolar</h3>
+                <p>Autor: &copy; Academia Mexicana de la Lengua</p>
+                <p>Género: Diccionario</p>
+            </div>
+        </div>
+    </section>
+    <section id="registro">
+        <h2>Formulario</h2>
+        <p>Escanea el siguiente código QR para acceder al formulario.</p>
+        <div class="qr-container">
+            <img src="Imagenes/qr.png" alt="Código QR para el formulario de registro">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Escuela Secundaria Técnica Número 6. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

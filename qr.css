@@ -1,0 +1,20 @@
+#registro {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#registro h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#registro p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.qr-container img {
+    width: 270px;
+    height: 250px;
+}
