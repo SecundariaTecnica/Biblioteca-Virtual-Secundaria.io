@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>14 de Febrero</title>
     <style>
-      body {
+     body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     height: 100vh;
@@ -53,20 +53,20 @@
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 10px;
     color: #b83c3d;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     color: #e74c3c;
 }
 
 p {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin: 10px 0;
     color: #9b3c4f;
 }
@@ -87,7 +87,7 @@ p {
 
 .countdown div span {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #c0392b;
 }
 
@@ -97,7 +97,7 @@ footer {
     color: #c0392b;
 }
 
-        .btn {
+.btn {
     display: inline-block;
     padding: 12px 25px;
     background-color: #e74c3c;
@@ -112,6 +112,66 @@ footer {
 
 .btn:hover {
     background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .countdown {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .countdown div {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1.3rem;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .countdown div {
+        font-size: 1.8rem;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 8px 18px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
 }
 
     </style>
