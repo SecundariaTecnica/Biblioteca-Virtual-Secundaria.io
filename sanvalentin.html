@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 de Febrero</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #f8d7e6, #ffe3e9);
+            overflow: hidden;
+            color: #5e2129;
+            text-align: center;
+        }
+
+        .heart-background {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .heart-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath fill="%23e74c3c" d="M50 94.5S4.8 56.6 4.8 34.7C4.8 17.7 18.3 4 35 4c8.7 0 14.9 5 18.8 10.5C56.7 9 62.9 4 71.6 4 88.3 4 101.8 17.7 101.8 34.7c0 21.9-45.2 59.8-45.2 59.8L50 94.5z"/%3E%3C/svg%3E') repeat;
+            background-size: 200px;
+            opacity: 0.2;
+            animation: move-hearts 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes move-hearts {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 1000px;
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: #b83c3d;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #e74c3c;
+        }
+
+        p {
+            font-size: 1.8rem;
+            margin: 10px 0;
+            color: #9b3c4f;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .countdown div {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown div span {
+            display: block;
+            font-size: 2.5rem;
+            color: #c0392b;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-background">
+        <h1>De parte de La Dirección Escolar</h1>
+        <h2>14 de Febrero</h2>
+        <p>Creado con amor para los estudiantes</p>
+
+        <div class="countdown">
+            <div>
+                <span id="days">0</span>
+                Days
+            </div>
+            <div>
+                <span id="hours">0</span>
+                Hours
+            </div>
+            <div>
+                <span id="minutes">0</span>
+                Minutes
+            </div>
+            <div>
+                <span id="seconds">0</span>
+                Seconds
+            </div>
+        </div>
+
+        <footer>
+            Realizado con amor &copy; Escuela Secundaria Técnica Número 6 ❤️
+        </footer>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date('February 14, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.body.innerHTML = '<h1>La Escuela Secundaria Técnica Número 6, les desea un Feliz San Valentín ❤️</h1>';
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
