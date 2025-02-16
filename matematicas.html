@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="boton.css">
-
 </head>
 <body>
-
     <header>
         <div class="header-content">
             <div class="header-text">
@@ -34,46 +32,58 @@
         <input type="text" id="search-input" placeholder="Buscar...">
         <i class="fas fa-search" id="search-icon"></i>
     </div>
-    
 
     <section id="categorias">
         <h2>Libros</h2>
-<div class="category-list">
-    <div class="category-item">
-        <h3>Los Simpson y las Matematicas</h3>
-        <img src="Imagenes/Los-simpson-y-las-matematicas.png" alt="Matemáticas">
-        <p>Descubre los secretos matemáticos ocultos en Los Simpson y diviértete aprendiendo.!</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Matemáticas y Computacion TIME LIFE</h3>
-        <img src="Imagenes/Libro Matemáticas - Computación TIME LIFE.png" alt="Matemáticas">
-        <p>Explora el fascinante mundo de las matemáticas y la computación a través de este libro de Time Life.</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Razonamiento Matematico</h3>
-        <img src="Imagenes/razonamientomat.png.jpg" alt="Matemáticas">
-        <p>Desarrolla tus habilidades en razonamiento matemático con este texto práctico.</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Geometría Analitica</h3>
-        <img src="Imagenes/analitica.png.jpg" alt="Matemáticas">
-        <p>Sumérgete en el mundo de la geometría analítica y sus aplicaciones.</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Álgebra Baldor</h3>
-        <img src="Imagenes/baldor.png" alt="Matemáticas">
-        <p>Un clásico para aprender álgebra de manera clara y eficaz.</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
+        <div class="category-list">
+            <div class="category-item">
+                <h3>Los Simpson y las Matematicas</h3>
+                <img src="Imagenes/Los-simpson-y-las-matematicas.png" alt="Matemáticas">
+                <p>Descubre los secretos matemáticos ocultos en Los Simpson y diviértete aprendiendo.!</p>
+                <a href="matematicas1.html" class="boton">Ir</a>
+            </div>
+        </div>
     </section>
+
+    <section id="books-container">
+        <h2>Libros Recomendados</h2>
+    </section>
+    
     <footer>
         <p>&copy; 2025 - 2030 Escuela Secundaria Técnica Número 6. Todos los derechos reservados.</p>
     </footer>
+
     <script src="script.js"></script>
     <script src="buscador.js"></script>
+    <script>
+        const apiKey = "TU_CLAVE_DE_API";
+        const query = "mathematics";
+        const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`;
+
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+              const booksContainer = document.getElementById("books-container");
+              data.items.forEach(book => {
+                  const title = book.volumeInfo.title || "Sin título";
+                  const authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Desconocido";
+                  const description = book.volumeInfo.description ? book.volumeInfo.description.substring(0, 150) + "..." : "Sin descripción";
+                  const thumbnail = book.volumeInfo.imageLinks?.thumbnail || "https://via.placeholder.com/128x190?text=No+Image";
+                  const link = book.volumeInfo.infoLink || "#";
+
+                  const bookCard = `
+                    <div class="category-item">
+                      <img src="${thumbnail}" alt="${title}">
+                      <h3>${title}</h3>
+                      <p><strong>Autor:</strong> ${authors}</p>
+                      <p>${description}</p>
+                      <a href="${link}" class="boton" target="_blank">Ver más</a>
+                    </div>
+                  `;
+                  booksContainer.innerHTML += bookCard;
+              });
+          })
+          .catch(error => console.error("Error al obtener los libros:", error));
+    </script>
 </body>
 </html>
