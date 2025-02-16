@@ -56,34 +56,37 @@
     <script src="script.js"></script>
     <script src="buscador.js"></script>
     <script>
-        const apiKey = "TU_CLAVE_DE_API";
-        const query = "mathematics";
-        const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`;
+        document.addEventListener("DOMContentLoaded", function () {
+            const apiKey = "AIzaSyC3zj3ca9N_UQEHrM77fUEXQOlq-wAxbnA";
+            const query = "mathematics";
+            const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`;
 
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-              const booksContainer = document.getElementById("books-container");
-              data.items.forEach(book => {
-                  const title = book.volumeInfo.title || "Sin título";
-                  const authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Desconocido";
-                  const description = book.volumeInfo.description ? book.volumeInfo.description.substring(0, 150) + "..." : "Sin descripción";
-                  const thumbnail = book.volumeInfo.imageLinks?.thumbnail || "https://via.placeholder.com/128x190?text=No+Image";
-                  const link = book.volumeInfo.infoLink || "#";
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const booksContainer = document.getElementById("books-container");
+                    data.items.forEach(book => {
+                        const title = book.volumeInfo.title || "Sin título";
+                        const authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Desconocido";
+                        const description = book.volumeInfo.description ? book.volumeInfo.description.substring(0, 150) + "..." : "Sin descripción";
+                        const thumbnail = book.volumeInfo.imageLinks?.thumbnail || "https://via.placeholder.com/128x190?text=No+Image";
+                        const link = book.volumeInfo.infoLink || "#";
 
-                  const bookCard = `
-                    <div class="category-item">
-                      <img src="${thumbnail}" alt="${title}">
-                      <h3>${title}</h3>
-                      <p><strong>Autor:</strong> ${authors}</p>
-                      <p>${description}</p>
-                      <a href="${link}" class="boton" target="_blank">Ver más</a>
-                    </div>
-                  `;
-                  booksContainer.innerHTML += bookCard;
-              });
-          })
-          .catch(error => console.error("Error al obtener los libros:", error));
+                        const bookCard = `
+                            <div class="category-item">
+                                <img src="${thumbnail}" alt="${title}">
+                                <h3>${title}</h3>
+                                <p><strong>Autor:</strong> ${authors}</p>
+                                <p>${description}</p>
+                                <a href="${link}" class="boton" target="_blank">Ver más</a>
+                            </div>
+                        `;
+                        booksContainer.innerHTML += bookCard;
+                    });
+                })
+                .catch(error => console.error("Error al obtener los libros:", error));
+        });
     </script>
 </body>
 </html>
+
