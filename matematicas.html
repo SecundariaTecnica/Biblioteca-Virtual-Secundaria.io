@@ -56,11 +56,29 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Biblioteca Virtual</h1>
-        <p>Bienvenidos a la Biblioteca Virtual de la Escuela Secundaria Técnica Número 6. Ahora mismo estás en la sección de Matemáticas.</p>
+   <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Biblioteca Virtual</h1>
+                <p>Bienvenidos a la Biblioteca Virtual de la Escuela Secundaria Técnica Número 6. Ahora mismo estas en la sección de Matemáticas.</p>
+            </div>
+            <div class="header-logo">
+                <img src="seculogc1.png" alt="Logo de la Escuela" />
+            </div>
+        </div>
     </header>
 
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar...">
+        <i class="fas fa-search" id="search-icon"></i>
+    </div>
     <section id="categorias">
         <h2>Libros</h2>
         <div class="category-list">
