@@ -53,99 +53,29 @@
         .category-item a:hover {
             background-color: #2980b9;
         }
-
-        #books-container h2 {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Biblioteca Virtual</h1>
-                <p>Bienvenidos a la Biblioteca Virtual de la Escuela Secundaria Técnica Número 6. Ahora mismo estas en la sección de Matemáticas.</p>
-            </div>
-            <div class="header-logo">
-                <img src="seculogc1.png" alt="Logo de la Escuela" />
-            </div>
-        </div>
+        <h1>Biblioteca Virtual</h1>
+        <p>Bienvenidos a la Biblioteca Virtual de la Escuela Secundaria Técnica Número 6. Ahora mismo estás en la sección de Matemáticas.</p>
     </header>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#categorias">Categorías</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
-    <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Buscar...">
-        <i class="fas fa-search" id="search-icon"></i>
-    </div>
-
-    <section id="categorias">
-        <h2>Libros</h2>
-       <div class="category-list">
-    <div class="category-item">
-        <h3>Los Simpson y las Matematicas</h3>
-        <img src="Imagenes/Los-simpson-y-las-matematicas.png" alt="Matemáticas">
-        <p>Descubre los secretos matemáticos ocultos en Los Simpson y diviértete aprendiendo.!</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Matemáticas y Computacion TIME LIFE</h3>
-        <img src="Imagenes/Libro Matemáticas - Computación TIME LIFE.png" alt="Matemáticas">
-        <p>Explora el fascinante mundo de las matemáticas y la computación a través de este libro de Time Life.</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Razonamiento Matematico</h3>
-        <img src="Imagenes/razonamientomat.png.jpg" alt="Matemáticas">
-        <p>Desarrolla tus habilidades en razonamiento matemático con este texto práctico.</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Geometría Analitica</h3>
-        <img src="Imagenes/analitica.png.jpg" alt="Matemáticas">
-        <p>Sumérgete en el mundo de la geometría analítica y sus aplicaciones.</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Álgebra Baldor</h3>
-        <img src="Imagenes/baldor.png" alt="Matemáticas">
-        <p>Un clásico para aprender álgebra de manera clara y eficaz.</p>
-        <a href="matematicas1.html" class="boton">Ir</a>
-    </div>
-    </section>
-
-    <section id="books-container">
-    </section>
+    <section id="books-container"></section>
     
-    <footer>
-        <p>&copy; 2025 - 2030 Escuela Secundaria Técnica Número 6. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="buscador.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const apiKey = "AIzaSyC3zj3ca9N_UQEHrM77fUEXQOlq-wAxbnA";
             const query = "matematicas";
-            const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`;
+            const maxResults = 40;
+            const startIndex = 0;
+            const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}&maxResults=${maxResults}&startIndex=${startIndex}`;
 
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     const booksContainer = document.getElementById("books-container");
+                    booksContainer.innerHTML = "";
                     data.items.forEach(book => {
                         const title = book.volumeInfo.title || "Sin título";
                         const authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Desconocido";
@@ -160,8 +90,7 @@
                                 <p><strong>Autor:</strong> ${authors}</p>
                                 <p>${description}</p>
                                 <a href="${link}" class="boton" target="_blank">Ver más</a>
-                            </div>
-                        `;
+                            </div>`;
                         booksContainer.innerHTML += bookCard;
                     });
                 })
