@@ -7,15 +7,60 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="boton.css">
+    <style>
+        #books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
 
+        .category-item {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .category-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .category-item h3 {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .category-item p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .category-item a {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .category-item a:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-
-    <header>
+   <header>
         <div class="header-content">
             <div class="header-text">
                 <h1>Biblioteca Virtual</h1>
-                <p>Bienvenidos a la Biblioteca Virtual de la Escuela Secundaria Técnica Número 6. Ahora mismo estas en la sección de Ciencias.</p>
+                <p>Bienvenidos a la Biblioteca Virtual de la Escuela Secundaria Técnica Número 6. Ahora mismo estás en la sección de Ciencias y Tecnología.</p>
             </div>
             <div class="header-logo">
                 <img src="seculogc1.png" alt="Logo de la Escuela" />
@@ -34,46 +79,77 @@
         <input type="text" id="search-input" placeholder="Buscar...">
         <i class="fas fa-search" id="search-icon"></i>
     </div>
-    
-
     <section id="categorias">
-        <h2>LIBROS</h2>
+        <h2>Libros</h2>
         <div class="category-list">
-    <div class="category-item">
-        <h3>Ciencias Naturales</h3>
-        <img src="Imagenes/Ciencias-Naturales.jpg" alt="Ciencias y Tecnología">
-        <p>Descubre los secretos matemáticos ocultos en Los Simpson y diviértete aprendiendo.!</p>
-        <a href="ciencias1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Informática para Jóvenes</h3>
-        <img src="Imagenes/Informática-Jóvenes.jpg" alt="Ciencias y Tecnología">
-        <p>Aprende cómo la informática transforma el mundo con este libro introductorio para estudiantes.</p>
-        <a href="ciencias1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Física para Secundaria</h3>
-        <img src="Imagenes/Fisica-Secundaria.jpg" alt="Ciencias y Tecnología">
-        <p>Explora los conceptos de física y cómo se aplican a situaciones cotidianas.</p>
-        <a href="ciencias1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Robótica</h3>
-        <img src="Imagenes/Robotica.jpg" alt="Ciencias y Tecnología">
-        <p>Sumérgete en el mundo de la robótica y descubre cómo se construyen robots.</p>
-        <a href="ciencias1.html" class="boton">Ir</a>
-    </div>
-    <div class="category-item">
-        <h3>Astronomía para Estudiantes</h3>
-        <img src="Imagenes/Astronomia-Estudiantes.jpg" alt="Ciencias y Tecnología">
-        <p>Descubre los secretos del espacio exterior y aprende sobre las estrellas y los planetas.</p>
-        <a href="ciencias1.html" class="boton">Ir</a>
-    </div>
-</div>
+            <div class="category-item">
+                <h3>Ciencias Naturales</h3>
+                <img src="Imagenes/Ciencias-Naturales.jpg" alt="Ciencias y Tecnología">
+                <p>Descubre los secretos matemáticos ocultos en Los Simpson y diviértete aprendiendo.!</p>
+                <a href="ciencias1.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Informática para Jóvenes</h3>
+                <img src="Imagenes/Informática-Jóvenes.jpg" alt="Ciencias y Tecnología">
+                <p>Aprende cómo la informática transforma el mundo con este libro introductorio para estudiantes.</p>
+                <a href="ciencias1.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Física para Secundaria</h3>
+                <img src="Imagenes/Fisica-Secundaria.jpg" alt="Ciencias y Tecnología">
+                <p>Explora los conceptos de física y cómo se aplican a situaciones cotidianas.</p>
+                <a href="ciencias1.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Robótica</h3>
+                <img src="Imagenes/Robotica.jpg" alt="Ciencias y Tecnología">
+                <p>Sumérgete en el mundo de la robótica y descubre cómo se construyen robots.</p>
+                <a href="ciencias1.html" class="boton">Ir</a>
+            </div>
+            <div class="category-item">
+                <h3>Astronomía para Estudiantes</h3>
+                <img src="Imagenes/Astronomia-Estudiantes.jpg" alt="Ciencias y Tecnología">
+                <p>Descubre los secretos del espacio exterior y aprende sobre las estrellas y los planetas.</p>
+                <a href="ciencias1.html" class="boton">Ir</a>
+            </div>
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2024 Escuela Secundaria Técnica Número 6. Todos los derechos reservados.</p>
-    </footer>
-    <script src="script.js"></script>
+
+    <section id="books-container"></section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const apiKey = "AIzaSyC3zj3ca9N_UQEHrM77fUEXQOlq-wAxbnA";
+            const query = "ciencias tecnologia";
+            const maxResults = 40;
+            const startIndex = 0;
+            const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}&maxResults=${maxResults}&startIndex=${startIndex}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const booksContainer = document.getElementById("books-container");
+                    booksContainer.innerHTML = "";
+                    data.items.forEach(book => {
+                        const title = book.volumeInfo.title || "Sin título";
+                        const authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Desconocido";
+                        const description = book.volumeInfo.description ? book.volumeInfo.description.substring(0, 150) + "..." : "Sin descripción";
+                        const thumbnail = book.volumeInfo.imageLinks?.thumbnail || "https://via.placeholder.com/128x190?text=No+Image";
+                        const link = book.volumeInfo.infoLink || "#";
+
+                        const bookCard = `
+                            <div class="category-item">
+                                <img src="${thumbnail}" alt="${title}">
+                                <h3>${title}</h3>
+                                <p><strong>Autor:</strong> ${authors}</p>
+                                <p>${description}</p>
+                                <a href="${link}" class="boton" target="_blank">Ver más</a>
+                            </div>`;
+                        booksContainer.innerHTML += bookCard;
+                    });
+                })
+                .catch(error => console.error("Error al obtener los libros:", error));
+        });
+    </script>
 </body>
 </html>
