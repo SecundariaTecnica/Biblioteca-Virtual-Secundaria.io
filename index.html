@@ -7,8 +7,30 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="boton.css">
-    <link rel="stylesheet" href="qr.css">
     <link rel="icon" href="seculogc1.ico">
+    <style>
+        .boton {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            border: none; 
+            border-radius: 5px;
+            text-decoration: none; 
+            transition: background-color 0.3s, transform 0.3s; 
+        }
+
+        .boton:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .boton:active {
+            transform: translateY(1px);
+        }
+    </style>
 </head>
 <body>
 
@@ -109,13 +131,13 @@
             </div>
         </div>
     </section>
+    
     <section id="registro">
         <h2>Formulario</h2>
-        <p>Escanea el siguiente código QR para acceder al formulario.</p>
-        <div class="qr-container">
-            <img src="Imagenes/qr.png" alt="Código QR para el formulario de registro">
-        </div>
+        <p>Haz clic en el botón a continuación para acceder al formulario.</p>
+        <a href="url_del_formulario.html" class="boton">Ir al Formulario</a>
     </section>
+
     <footer>
         <p>&copy; 2025 - 2030 Escuela Secundaria Técnica Número 6. Todos los derechos reservados.</p>
     </footer>
