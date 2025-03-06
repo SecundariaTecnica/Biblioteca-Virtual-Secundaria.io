@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Escuela Secundaria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="boton.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Biblioteca Virtual</h1>
+                <p>Bienvenidos a la Biblioteca Virtual de la Escuela Secundaria Técnica Número 6. Ahora mismo estas en la sección de Matemáticas.</p>
+            </div>
+            <div class="header-logo">
+                <img src="seculogc1.png" alt="Logo de la Escuela" />
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar...">
+        <i class="fas fa-search" id="search-icon"></i>
+    </div>
+    
+
+    <section id="categorias">
+        <h2>Matemáticas</h2>
+        <div class="category-list">
+            <div class="category-item">
+                <h3>Los Simpson y las Matematicas</h3>
+                <img src="Imagenes/Los-simpson-y-las-matematicas.png" alt="Matemáticas">
+                <p>Autor: &copy; Simon Singh</p>
+                <p>Género: Matemáticas y <a href="ciencias.html">Tecnología</a></p>
+                <a href="SIMPSON.pdf" class="boton" download="SIMPSON.pdf">¡DESCARGA EL LIBRO!</a>
+            </div>
+            <div class="category-item">
+                <h3>Matemáticas y Computacion TIME LIFE</h3>
+                <img src="Imagenes/Libro Matemáticas - Computación TIME LIFE.png" alt="Matemáticas">
+                <p>Autor: &copy; Time Life</p>
+                <p>Género: Matemáticas y <a href="ciencias.html">Tecnología</a></p>
+                <a href="TIMELIFEMATE.pdf" class="boton" download="TIMELIFEMATE.pdf">¡DESCARGA EL LIBRO!</a>
+            </div>
+            <div class="category-item">
+                <h3>Razonamiento Matematico</h3>
+                <img src="Imagenes/razonamientomat.png.jpg" alt="Matemáticas">
+                <p>Autor: &copy; Eduardo C</p>
+                <p>Género: Matemáticas</p>
+                <a href="RAZONAMIENTO.pdf" class="boton" download="RAZONAMIENTO.pdf">¡DESCARGA EL LIBRO!</a>
+            </div>
+            <div class="category-item">
+                <h3>Geometría Analitica</h3>
+                <img src="Imagenes/analitica.png.jpg" alt="Matemáticas">
+                <p>Autor: &copy; Sergio F. Garcia</p>
+                <p>Género: Matemáticas</p>
+                <a href="GEOMETRIAA.pdf" class="boton" download="GEOMETRIAA.pdf">¡DESCARGA EL LIBRO!</a>
+            </div>
+            <div class="category-item">
+                <h3>Álgebra Baldor</h3>
+                <img src="Imagenes/baldor.png" alt="Matemáticas">
+                <p>Autor: &copy; Aurelio Baldor</p>
+                <p>Género: Matemáticas</p>
+                <a href="BALDORALGEBRA.pdf" class="boton" download="BALDORALGEBRA.pdf">¡DESCARGA EL LIBRO!</a>
+            </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 - 2030 Escuela Secundaria Técnica Número 6. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="buscador.js"></script>
+</body>
+</html>
