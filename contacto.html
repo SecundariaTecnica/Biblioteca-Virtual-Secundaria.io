@@ -175,35 +175,15 @@ footer {
     margin-top: 40px;
 }
 
-.redes-sociales {
-    background: transparent;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-top: 2px solid #0073e6;
-    margin-top: 40px;
-}
+    .redes-sociales {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-.redes-sociales h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.redes-sociales .icono-facebook {
-    width: 50px;
-    height: auto;
-    margin-top: 10px;
-    transition: transform 0.3s;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.redes-sociales .icono-facebook:hover {
-    transform: scale(1.1);
-}
-
+    .icono-redes {
+        width: 40px;
+        height: 40px;
+    }
     </style>
 </head>
 <body>
@@ -251,12 +231,14 @@ footer {
             </a>
         </div>
 
-  <div class="imagenes-referencia">
+<div class="imagenes-referencia">
     <h3>Institución</h3>
+    
+    <div class="imagen-referencia">
+        <img src="Fachada.jpg" alt="Fachada de la escuela" onclick="abrirModal(this)">
+    </div>
+
     <div class="fila-imagenes">
-        <div class="imagen-referencia">
-            <img src="Fachada.jpg" alt="Fachada de la escuela" onclick="abrirModal(this)">
-        </div>
         <div class="imagen-referencia">
             <img src="JG.jpg" alt="JG" onclick="abrirModal(this)">
         </div>
@@ -272,6 +254,13 @@ footer {
 <div id="modalImagen" class="modal" onclick="cerrarModal()">
     <span class="close" onclick="cerrarModal()">&times;</span>
     <img id="imagenAmpliada" src="" alt="Imagen Ampliada" onclick="event.stopPropagation()">
+</div>
+
+<div class="redes-sociales">
+    <h3>Síguenos en nuestras redes sociales</h3>
+    <a href="https://www.facebook.com/share/1BRmU9phpf/" target="_blank">
+        <img src="Facebook.png" alt="Facebook" class="icono-redes">
+    </a>
 </div>
 
 <script>
