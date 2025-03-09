@@ -253,45 +253,42 @@ footer {
 
         <div class="imagenes-referencia">
     <h3>Institución</h3>
-    <img src="Fachada.jpg" alt="Fachada de la escuela">
+    <img src="Fachada.jpg" alt="Fachada de la escuela" onclick="abrirModal(this)">
     <div class="fila-imagenes">
         <div class="imagen-referencia">
-            <img src="JG.jpg" alt="JG">
+            <img src="JG.jpg" alt="JG" onclick="abrirModal(this)">
         </div>
         <div class="imagen-referencia">
-            <img src="Ambos.jpg" alt="Ambos">
+            <img src="Ambos.jpg" alt="Ambos" onclick="abrirModal(this)">
         </div>
         <div class="imagen-referencia">
-            <img src="SL.jpg" alt="SL">
-            
+            <img src="SL.jpg" alt="SL" onclick="abrirModal(this)">
         </div>
     </div>
 </div>
-        <div id="modalImagen" class="modal" onclick="cerrarModal()">
-    <span class="close" onclick="cerrarModal()">&times;</span>
-    <img id="imagenAmpliada" src="" alt="Imagen Ampliada">
-</div>
-            <div class="redes-sociales">
-    <h2>Síguenos en nuestras redes sociales</h2>
-    <a href="https://www.facebook.com/share/1BRmU9phpf/" target="_blank">
-        <img src="Facebook.png" alt="Facebook" class="icono-facebook">
-    </a>
-</div>
-    </section>
 
-    <footer>
-        <p>&copy; 2025 - 2030 Escuela Secundaria Técnica Número 6. Todos los derechos reservados.</p>
-    </footer>
-    <script>
+<div id="modalImagen" class="modal" onclick="cerrarModal()">
+    <span class="close" onclick="cerrarModal()">&times;</span>
+    <img id="imagenAmpliada" src="" alt="Imagen Ampliada" onclick="event.stopPropagation()">
+</div>
+
+<script>
     function abrirModal(imagen) {
         var modal = document.getElementById("modalImagen");
         var imagenAmpliada = document.getElementById("imagenAmpliada");
         imagenAmpliada.src = imagen.src;
         modal.style.display = "flex";
     }
+
     function cerrarModal() {
         document.getElementById("modalImagen").style.display = "none";
     }
-    </script>
+</script>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - 2030 Escuela Secundaria Técnica Número 6. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
