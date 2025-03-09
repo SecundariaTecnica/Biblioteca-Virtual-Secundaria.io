@@ -148,22 +148,34 @@
             margin-top: 40px;
         }
     .redes-sociales {
-        margin-top: 40px;
-        text-align: center;
-        background: #0073e6;
+        background: #333;
+        color: white;
         padding: 20px;
-        border-radius: 20px;
-        box-shadow: 0px 4px 8px rgba(0,
+        text-align: center;
+        border-top: 2px solid #0073e6;
+        margin-top: 40px;
+    }
 
-        .redes-sociales .icono-facebook {
-            width: 50px;
-            height: auto;
-            transition: transform 0.3s;
-        }
+    .redes-sociales h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
 
-        .redes-sociales .icono-facebook:hover {
-            transform: scale(1.1);
-        }
+    .redes-sociales .icono-facebook {
+        width: 50px;
+        height: auto;
+        margin-top: 10px;
+        transition: transform 0.3s;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: #0073e6;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .redes-sociales .icono-facebook:hover {
+        transform: scale(1.1);
+    }
     </style>
 </head>
 <body>
@@ -215,12 +227,6 @@
             <div class="imagen-referencia">
                 <h3>Institución</h3>
                 <img src="Fachada.jpg" alt="Fachada de la escuela">
-            </div>
-            <div class="redes-sociales">
-            <a href="https://www.facebook.com/share/1BRmU9phpf/" target="_blank">
-                <img src="Facebook.png" alt="Facebook" class="icono-facebook">
-            </a>
-        </div>
             <div class="fila-imagenes">
                 <div class="imagen-referencia">
                     <img src="JG.jpg" alt="JG">
@@ -233,7 +239,12 @@
                 </div>
             </div>
         </div>
-
+            <div class="redes-sociales">
+    <h2>Síguenos en nuestras redes sociales</h2>
+    <a href="https://www.facebook.com/share/1BRmU9phpf/" target="_blank">
+        <img src="Facebook.png" alt="Facebook" class="icono-facebook">
+    </a>
+</div>
     </section>
 
     <footer>
