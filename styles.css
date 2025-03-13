@@ -91,7 +91,7 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #003366;
+    background: linear-gradient(90deg, #800020, #9b111e)
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     animation: slideDown 1s ease-out;
@@ -117,7 +117,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #ff6f61;
+    background-color: #9b111e;
     color: white;
     transform: scale(1.05);
 }
